@@ -1,18 +1,24 @@
+server:
+  port: 8080
 spring:
+  application:
+    name: reggie_take_out
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/db1?serverTimezone=UTC
-    username: root
-    password: root1
-    type: com.alibaba.druid.pool.DruidDataSource
-#  mp日志
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/reggie?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+      username: root
+      password: root1
+      type: com.alibaba.druid.pool.DruidDataSource
 mybatis-plus:
   configuration:
-    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
+    #address_book------>AddressBook
+    #在映射实体或者属性时，将数据库中表名和字段名中的下划线去掉，按照驼峰命名法映射
+    map-underscore-to-camel-case: true #开启这里的内容，可以用mybatis-plus来进行表和类名进行映射关系，比如address_book------>AddressBook
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   global-config:
-    # dao中的id自增
     db-config:
-      id-type: auto     # 确定表里也是自增，
-      logic-delete-field: deleted
-      logic-delete-value: 1
-      logic-not-delete-value: 0
+      id-type: ASSIGN_ID
+
+reggie:
+  path: D:\img\
