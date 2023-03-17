@@ -8,7 +8,7 @@ spring:
       driver-class-name: com.mysql.cj.jdbc.Driver
       url: jdbc:mysql://localhost:3306/reggie?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
       username: root
-      password: root1
+      password: hspedu100
       type: com.alibaba.druid.pool.DruidDataSource
 mybatis-plus:
   configuration:
@@ -22,3 +22,4 @@ mybatis-plus:
 
 reggie:
   path: D:\img\
+
