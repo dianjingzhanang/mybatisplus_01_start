@@ -13,7 +13,7 @@ public class UploadFileTest {
     @Test
     public void test1(){
         //redis,清除所有菜品的缓存数据
-        Set keys = redisTemplate.keys("dish_*");
-        redisTemplate.delete(keys);
+//        Set keys = redisTemplate.keys("dish_*");
+//        redisTemplate.delete(keys);
     }
 }
